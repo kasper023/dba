@@ -3,7 +3,18 @@
     padding: 30px 0;
     background-color: #66604b;
 }
+.header__wrapper {
+    display: flex;
+}
 .header__link {
-    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    color: #888;
     margin-right: 20px;
+}
+.header__link_inner_active {
+    color: #fff;
+}
+.header__link_inner:hover {
+    color: #fff;
 }

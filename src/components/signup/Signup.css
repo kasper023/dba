@@ -1,3 +1,9 @@
 .signup {
     padding: 50px 0;
 }
+.signup__wrapper {
+    display: flex;
+}
+.form {
+    margin-right: 30px;
+}

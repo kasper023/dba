@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import './Header.css'
@@ -8,12 +8,35 @@ interface Props {
 }
 
 export default function Header({}: Props): ReactElement {
+
+    const [auth, setAuth] = useState(true)
+
+    const toggle_link = (e: any) => {
+        let myLinks = document.querySelectorAll('.header__link_inner')
+        
+        for( let i = 0; i < myLinks.length; i++) {
+            myLinks[i].classList.remove('header__link_inner_active')
+            e.target.classList.add('header__link_inner_active')
+        }
+        
+    }
+
     return (
         <div className="header">
             <div className="container">
-                <NavLink className="header__link" to="/login">Home</NavLink>
-                <NavLink className="header__link" to="/login">Login</NavLink>
-                <NavLink className="header__link" to="/login">Бейба's game</NavLink>
+                <div className="header__wrapper">
+                    <p className="header__link">
+                        <NavLink className="header__link_inner" to="/" onClick={e => toggle_link(e)}>Home</NavLink>
+                    </p>
+                    <p className="header__link">
+                        <NavLink className="header__link_inner" to="/login" onClick={e => toggle_link(e)}>Login</NavLink>
+                        /
+                        <NavLink className="header__link_inner" to="/signup" onClick={e => toggle_link(e)}>Signup</NavLink>
+                    </p>
+                    <p className="header__link">
+                        <NavLink className="header__link_inner" to="/game" onClick={e => toggle_link(e)}>Game</NavLink>
+                    </p>
+                </div>
             </div>
         </div>
     )
