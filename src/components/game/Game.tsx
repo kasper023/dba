@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 
 import "./Game.css"
 import Board from "./game-board";
@@ -58,7 +58,9 @@ const Game: React.FC = () => {
         setXIsNext((step % 2) === 0)
     };
 
-
+    // useEffect(() =>{
+    //     document.title = `Game-set number ${game}`;
+    // })
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
 
@@ -74,7 +76,7 @@ const Game: React.FC = () => {
     });
 
     let status;
-    let winners = []
+    let winners = [];
     if (winner) {
         status = "Winner: " + winner;
         winners.push(winner);
@@ -96,11 +98,17 @@ const Game: React.FC = () => {
                 <div>{status}</div>
                 <ol>{moves}</ol>
             </div>
+            <div className="winners">
+                <p>Winners</p>
+                {winners.map((winner, index) =>(
+                    <li key={index}>
+                        <div>{winner}</div>
+                    </li>
+                ))}
+            </div>
             <div onClick={toggleTheme} className="cart-info__icon mr-lg-3" style={{
-                // border: "2px solid black", borderRadius: "5px",
                 border: "0",
                 backgroundColor: "white",
-                // borderColor: "#4CAF50",
                 color: "green",
                 padding: "14px 28px",
                 fontSize: "16px",
