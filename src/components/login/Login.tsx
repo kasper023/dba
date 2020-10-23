@@ -48,10 +48,15 @@ export default function Login({}: Props): ReactElement {
         <div className="login">
             <div className="container">
                 <div className="login__wrapper">
-                    <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
-                    <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
-                    <button onClick={() => {clearForm()}}>Cancel</button>
-                    <button onClick={() => {submitForm()}}>Submit</button>
+                    <h1 className="login__title">Login</h1>
+                    <div className="form">
+                        <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
+                        <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
+                        <div className="buttons">
+                            <button onClick={() => {clearForm()}}>Cancel</button>
+                            <button onClick={() => {submitForm()}}>Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

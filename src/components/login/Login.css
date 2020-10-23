@@ -1,0 +1,39 @@
+.login {
+    padding: 50px 0;
+}
+.login__wrapper {
+    /* display: flex; */
+}
+.login__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form {
+    width: 20%;
+    margin: 0 auto;
+}
+.form input {
+    margin-bottom: 20px;
+    width: 100%;
+}
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    padding: 10px;
+    width: 45%;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.buttons button:hover {
+    color: #fff;
+    background-color: #000;
+}

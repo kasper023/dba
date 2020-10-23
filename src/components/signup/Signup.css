@@ -2,8 +2,46 @@
     padding: 50px 0;
 }
 .signup__wrapper {
-    display: flex;
+    /* display: flex; */
+}
+.signup__title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
 }
 .form {
-    margin-right: 30px;
+    width: 20%;
+    margin: 0 auto;
+}
+.form input {
+    width: 100%;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 1px solid #000;
+}
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    padding: 10px;
+    width: 45%;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: transparent;
+}
+.buttons button:hover {
+    color: #fff;
+    background-color: #000;
+}
+.pass_alarm {
+    background-color: tomato;
 }

@@ -9,7 +9,11 @@ interface Props {
 }
 
 export default function Anime({animeList}: Props): ReactElement {
+
+    const divRef = React.useRef<HTMLDivElement>(null);
+
     const { theme, toggleTheme } = useContext(ThemeContext);
+    
     return (
          <div className="anime">
              <div className="container">
@@ -32,18 +36,7 @@ export default function Anime({animeList}: Props): ReactElement {
                         </div>
                     </div>
                 </div>
-                 <div onClick={toggleTheme} className="cart-info__icon mr-lg-3" style={{
-                     // border: "2px solid black", borderRadius: "5px",
-                     border: "0",
-                     backgroundColor: "white",
-                     // borderColor: "#4CAF50",
-                     color: "green",
-                     padding: "14px 28px",
-                     fontSize: "16px",
-                     width: "10%",
-                     textAlign: "center",
-                     margin: "5px",
-                     cursor: "pointer"}}>
+                 <div onClick={toggleTheme} className="theme">
                      {theme === 'light' ? 'dark' : 'light'}
                  </div>
              </div>

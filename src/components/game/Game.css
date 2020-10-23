@@ -68,3 +68,8 @@ body {
     cursor: pointer;
     height: 20px;
 }
+
+
+.nick_alarm {
+    background-color: tomato;
+}

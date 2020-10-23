@@ -21,6 +21,16 @@ export default function Signup({}: Props): ReactElement {
             email: mail,
             password: password
         }
+        let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
+        let pass = document.querySelector('#pass')
+        if(pass) {
+            if(!strongRegex.test(password)) {
+                pass.classList.add('pass_alarm')
+            }
+            else {
+                pass.classList.remove('pass_alarm')
+            }
+        }
     })
 
     function submitForm() {
@@ -65,12 +75,15 @@ export default function Signup({}: Props): ReactElement {
         <div className="signup">
             <div className="container">
                 <div className="signup__wrapper">
+                    <h1 className="signup__title">Sign Up</h1>
                     <div className="form">
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
                         <input type="text" placeholder="e-mail" onChange={(e) => {setMail(e.target.value)}}/> <br/>
-                        <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
-                        <button onClick={() => {clearForm()}}>Cancel</button>
-                        <button onClick={() => {submitForm()}}>Submit</button>
+                        <input id="pass" type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
+                        <div className="buttons">
+                            <button onClick={() => {clearForm()}}>Cancel</button>
+                            <button onClick={() => {submitForm()}}>Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
