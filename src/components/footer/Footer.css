@@ -1,0 +1,24 @@
+.footer {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    padding: 50px 0;
+    /* margin-top: 100px; */
+    background-color: brown;
+}
+.footer__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+}
+.footer__icons {
+}
+.footer__link {
+    margin-right: 25px;
+    color: #aaa;
+}
+.footer__link:hover {
+    color: #fff;
+}
