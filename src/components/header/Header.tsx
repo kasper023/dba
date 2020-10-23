@@ -18,14 +18,20 @@ export default function Header({}: Props): ReactElement {
         }
         
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1304cdb24e51563b1b5f99f704ac67c10a878a99
     const [username, setUsername] = useState('')
     useEffect(() => {
         if(localStorage['users']) {
             setUsername(JSON.parse(localStorage['users']).username)
         }
     })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1304cdb24e51563b1b5f99f704ac67c10a878a99
     const logout = () => {
         localStorage.removeItem('users')
         window.location.href='http://localhost:3000'
@@ -36,7 +42,7 @@ export default function Header({}: Props): ReactElement {
             <div className="container">
                 <div className="header__wrapper">
                     <p className="header__link">
-                        <NavLink className="header__link_inner" to="/" onClick={e => toggle_link(e)}>Home</NavLink>
+                        <NavLink className="header__link_inner" to="/main" onClick={e => toggle_link(e)}>Home</NavLink>
                     </p>
                     <p className="header__link">
                         <NavLink className="header__link_inner" to="/login" onClick={e => toggle_link(e)}>Login</NavLink>
@@ -50,6 +56,12 @@ export default function Header({}: Props): ReactElement {
                         <NavLink className="header__link_inner" to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
                     </p>
                     <p className="header__link">
+<<<<<<< HEAD
+=======
+                        <NavLink className="header__link_inner" to="/about" onClick={e => toggle_link(e)}>About</NavLink>
+                    </p>
+                    <p className="header__link">
+>>>>>>> 1304cdb24e51563b1b5f99f704ac67c10a878a99
                         {username}
                     </p>
                     <p className="header__link">

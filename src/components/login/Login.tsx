@@ -15,7 +15,7 @@ export default function Login({}: Props): ReactElement {
     const [error, setError] = useState(<></>)
     
     useEffect(() => {
-        document.title = ', ' + username
+        document.title = 'welcome, ' + username
     })
     
     const submitForm = () => {

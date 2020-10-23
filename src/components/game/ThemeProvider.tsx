@@ -24,3 +24,4 @@ export const ThemeProvider: React.FC = ({ children }) => {
         </ThemeContext.Provider>
     );
 };
+

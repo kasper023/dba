@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useEffect, useState} from "react"
 
 import "./Game.css"
 import Board from "./game-board";
@@ -30,6 +30,8 @@ const Game: React.FC = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
     const [xIsNext, setXIsNext] = useState<boolean>(true);
     const [stepNumber, setStepNumber] = useState<number>(0);
+    let [gameCount, setGameCount] = useState(0);
+
     const [history, setHistory] = useState<{squares: SquareValue[]}[]>([
         {
             squares: Array(9).fill(null)
@@ -58,7 +60,9 @@ const Game: React.FC = () => {
         setXIsNext((step % 2) === 0)
     };
 
-
+    // useEffect(() =>{
+    //     document.title = `Game-set number ${game}`;
+    // })
     const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
 
@@ -68,20 +72,25 @@ const Game: React.FC = () => {
             'Go to game start';
         return (
             <li key={move}>
-                <button onClick={() => jumpTo(move)}>{desc}</button>
+                <button onClick={() => {
+                    jumpTo(move);
+                    setGameCount(gameCount + 1);
+                }}>{desc}</button>
             </li>
         );
     });
 
     let status;
-    let winners = []
+    let winners = [];
     if (winner) {
         status = "Winner: " + winner;
         winners.push(winner);
     } else {
         status = "Next player: " + (xIsNext ? "X" : "O");
     }
-
+    useEffect(() => {
+        document.title = `Game count: ${gameCount}`;
+    }, [gameCount]);
     return (
         <div className="game">
             <div className="game-board">
@@ -96,20 +105,21 @@ const Game: React.FC = () => {
                 <div>{status}</div>
                 <ol>{moves}</ol>
             </div>
-            <div onClick={toggleTheme} className="cart-info__icon mr-lg-3" style={{
-                // border: "2px solid black", borderRadius: "5px",
-                border: "0",
-                backgroundColor: "white",
-                // borderColor: "#4CAF50",
-                color: "green",
-                padding: "14px 28px",
-                fontSize: "16px",
-                width: "10%",
-                textAlign: "center",
-                margin: "5px",
-                cursor: "pointer"}}>
-                {theme === 'light' ? 'dark' : 'light'}
+            <div className="winners">
+                {/*<p>Winners</p>*/}
+                {/*{winners.map((winner, index) =>(*/}
+                {/*    <li key={index}>*/}
+                {/*        <div>{winner}</div>*/}
+                {/*    </li>*/}
+                {/*))}*/}
+                <h2 className={"gameCount"}>
+                    <p>Game count: {gameCount}</p>
+                </h2>
             </div>
+            <div onClick={toggleTheme} className={"darkLight"}>
+                <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
+            </div>
+
         </div>
     );
 };

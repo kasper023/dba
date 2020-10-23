@@ -13,6 +13,7 @@ import Main from '../main/Main';
 import Footer from '../footer/Footer';
 
 import {ThemeProvider} from "../game/ThemeProvider";
+import About from "../aboutus/About";
 
 
 
@@ -42,6 +43,9 @@ function App() {
           <ThemeProvider>
             <Anime animeList={animeList} />
           </ThemeProvider>
+        </Route>
+        <Route path="/about">
+            <About />
         </Route>
         <Footer />
       </div>
