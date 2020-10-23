@@ -4,6 +4,8 @@ import Header from '../header/Header';
 import Login from '../login/Login';
 import Signup from '../signup/Signup';
 import Game from "../game/Game";
+import Anime from "../anime/Anime";
+import { animeList } from "../../models/Anime"
 import './App.css';
 import Validation from "../game/Validation";
 
@@ -23,6 +25,9 @@ function App() {
         </Route>
         <Route path="/valid">
           <Validation />
+        </Route>
+        <Route path="/anime">
+          <Anime animeList={animeList} />
         </Route>
       </div>
     </BrowserRouter>

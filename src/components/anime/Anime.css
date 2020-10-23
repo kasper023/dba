@@ -1,0 +1,35 @@
+.anime {
+    padding: 50px 0;
+    background-color: #789880;
+}
+.anime__wrapper {
+
+}
+.anime__title {
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.anime__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.catalog {
+    width: 24%;
+    margin-bottom: 30px;
+}
+.catalog img {
+    width: 100%;
+    height: 200px;
+}
+.card__title {
+    font-size: 20px;
+    color: #fff;
+}
+.card__rating {
+    font-size: 10px;
+    color: red;
+}
