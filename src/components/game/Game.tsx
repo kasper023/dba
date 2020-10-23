@@ -1,7 +1,8 @@
-import React, {ReactNode, useState} from "react"
+import React, {useContext, useState} from "react"
 
 import "./Game.css"
 import Board from "./game-board";
+import {ThemeContext} from "./ThemeProvider";
 
 export type SquareValue = 'X' | 'O' | null;
 
@@ -26,6 +27,7 @@ const calculateWinner = (squares: SquareValue[]): SquareValue => {
 };
 
 const Game: React.FC = () => {
+    const { theme, toggleTheme } = useContext(ThemeContext);
     const [xIsNext, setXIsNext] = useState<boolean>(true);
     const [stepNumber, setStepNumber] = useState<number>(0);
     const [history, setHistory] = useState<{squares: SquareValue[]}[]>([
@@ -93,6 +95,20 @@ const Game: React.FC = () => {
 
                 <div>{status}</div>
                 <ol>{moves}</ol>
+            </div>
+            <div onClick={toggleTheme} className="cart-info__icon mr-lg-3" style={{
+                // border: "2px solid black", borderRadius: "5px",
+                border: "0",
+                backgroundColor: "white",
+                // borderColor: "#4CAF50",
+                color: "green",
+                padding: "14px 28px",
+                fontSize: "16px",
+                width: "10%",
+                textAlign: "center",
+                margin: "5px",
+                cursor: "pointer"}}>
+                {theme === 'light' ? 'dark' : 'light'}
             </div>
         </div>
     );

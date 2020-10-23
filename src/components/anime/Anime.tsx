@@ -1,14 +1,16 @@
-import React, { ReactElement ,useState} from 'react'
+import React, {ReactElement, useContext, useState} from 'react'
 
 import { AnimeModel } from "../../models/Anime";
 
 import './Anime.css'
+import {ThemeContext} from "../game/ThemeProvider";
 interface Props {
     animeList: AnimeModel[]
 }
 
 export default function Anime({animeList}: Props): ReactElement {
-     return (
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    return (
          <div className="anime">
              <div className="container">
                 <div className="anime__wrapper">
@@ -30,6 +32,20 @@ export default function Anime({animeList}: Props): ReactElement {
                         </div>
                     </div>
                 </div>
+                 <div onClick={toggleTheme} className="cart-info__icon mr-lg-3" style={{
+                     // border: "2px solid black", borderRadius: "5px",
+                     border: "0",
+                     backgroundColor: "white",
+                     // borderColor: "#4CAF50",
+                     color: "green",
+                     padding: "14px 28px",
+                     fontSize: "16px",
+                     width: "10%",
+                     textAlign: "center",
+                     margin: "5px",
+                     cursor: "pointer"}}>
+                     {theme === 'light' ? 'dark' : 'light'}
+                 </div>
              </div>
          </div>
 

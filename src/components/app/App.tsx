@@ -8,6 +8,7 @@ import Anime from "../anime/Anime";
 import { animeList } from "../../models/Anime"
 import './App.css';
 import Validation from "../game/Validation";
+import {ThemeProvider} from "../game/ThemeProvider";
 
 
 function App() {
@@ -22,14 +23,18 @@ function App() {
           <Signup />
         </Route>
         <Route path="/game">
-          <Game />
+          <ThemeProvider>
+            <Game />
+          </ThemeProvider>
         </Route>
         <Route path="/valid">
           <Validation />
         </Route>
         <Route path="/anime">
-          <Anime animeList={animeList} />
-        </Route>
+          <ThemeProvider>
+            <Anime animeList={animeList} />
+          </ThemeProvider>
+          </Route>
       </div>
     </BrowserRouter>
   );
