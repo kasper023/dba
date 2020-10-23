@@ -20,12 +20,12 @@ body {
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
-    height: 70px;
+    height: 100px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 70px;
+    width: 100px;
 }
 
 .square:focus {
@@ -37,8 +37,8 @@ body {
 }
 
 .game {
-    display: grid;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-top: 70px;
 }
@@ -52,4 +52,19 @@ body {
 }
 .validation>input{
     margin-bottom: 20px;
+}
+.game-board{
+    margin-right: 30px;
+}
+.darkLight{
+    border: 0;
+    background-color: white;
+    color: green;
+    padding: 14px 28px;
+    font-size: 16px;
+    width: 10%;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+    height: 20px;
 }
