@@ -8,8 +8,12 @@ import Anime from "../anime/Anime";
 import { animeList } from "../../models/Anime"
 import './App.css';
 import Validation from "../game/Validation";
+
 import Main from '../main/Main';
 import Footer from '../footer/Footer';
+
+import {ThemeProvider} from "../game/ThemeProvider";
+
 
 
 function App() {
@@ -27,13 +31,17 @@ function App() {
           <Signup />
         </Route>
         <Route path="/game">
-          <Game />
+          <ThemeProvider>
+            <Game />
+          </ThemeProvider>
         </Route>
         <Route path="/valid">
           <Validation />
         </Route>
         <Route path="/anime">
-          <Anime animeList={animeList} />
+          <ThemeProvider>
+            <Anime animeList={animeList} />
+          </ThemeProvider>
         </Route>
         <Footer />
       </div>
