@@ -8,9 +8,7 @@ interface Props {
 }
 
 export default function Header({}: Props): ReactElement {
-
-    const [auth, setAuth] = useState(true)
-
+    
     const toggle_link = (e: any) => {
         let myLinks = document.querySelectorAll('.header__link_inner')
         
@@ -19,6 +17,11 @@ export default function Header({}: Props): ReactElement {
             e.target.classList.add('header__link_inner_active')
         }
         
+    }
+
+    const logout = () => {
+        localStorage.removeItem('users')
+        window.location.href='http://localhost:3000'
     }
 
     return (
@@ -38,6 +41,9 @@ export default function Header({}: Props): ReactElement {
                     </p>
                     <p className="header__link">
                         <NavLink className="header__link_inner" to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
+                    </p>
+                    <p className="header__link">
+                        <button onClick={logout}>Logout</button>
                     </p>
                 </div>
             </div>

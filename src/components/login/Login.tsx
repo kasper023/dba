@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useState, useEffect } from 'react'
 
 import './Login.css'
 interface Props {
@@ -7,10 +7,17 @@ interface Props {
 
 export default function Login({}: Props): ReactElement {
     
+    // const [name, setName] = useState('');
+
+    
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(<></>)
-
+    
+    useEffect(() => {
+        document.title = ', ' + username
+    })
+    
     const submitForm = () => {
         if(localStorage['users']) {
             let user = JSON.parse(localStorage['users'])
