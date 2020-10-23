@@ -9,8 +9,6 @@ interface Props {
 
 export default function Header({}: Props): ReactElement {
 
-    const [auth, setAuth] = useState(true)
-
     const toggle_link = (e: any) => {
         let myLinks = document.querySelectorAll('.header__link_inner')
         
