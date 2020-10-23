@@ -9,6 +9,7 @@ import { animeList } from "../../models/Anime"
 import './App.css';
 import Validation from "../game/Validation";
 
+
 function App() {
   return (
     <BrowserRouter>

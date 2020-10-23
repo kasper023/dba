@@ -72,8 +72,10 @@ const Game: React.FC = () => {
     });
 
     let status;
+    let winners = []
     if (winner) {
         status = "Winner: " + winner;
+        winners.push(winner);
     } else {
         status = "Next player: " + (xIsNext ? "X" : "O");
     }

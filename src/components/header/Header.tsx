@@ -34,7 +34,7 @@ export default function Header({}: Props): ReactElement {
                         <NavLink className="header__link_inner" to="/signup" onClick={e => toggle_link(e)}>Signup</NavLink>
                     </p>
                     <p className="header__link">
-                        <NavLink className="header__link_inner" to="/game" onClick={e => toggle_link(e)}>Game</NavLink>
+                        <NavLink className="header__link_inner" to="/valid" onClick={e => toggle_link(e)}>Game</NavLink>
                     </p>
                     <p className="header__link">
                         <NavLink className="header__link_inner" to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
