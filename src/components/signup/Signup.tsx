@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useEffect, useState } from 'react'
 
 import { User } from '../../models/User'
 
@@ -13,6 +13,15 @@ export default function Signup({}: Props): ReactElement {
     const [mail, setMail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(<></>)
+    let user: User
+
+    useEffect(() => {
+        user = {
+            username: username,
+            email: mail,
+            password: password
+        }
+    })
 
     function submitForm() {
         if(localStorage['user']) {
@@ -29,14 +38,6 @@ export default function Signup({}: Props): ReactElement {
             else {
                 alert('Created!')
             }
-
-            let user: User
-
-            user = {
-                username: username,
-                email: mail,
-                password: password
-            }        
 
             if(localStorage['users']) {
                 console.log(localStorage['users']);

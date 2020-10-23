@@ -19,6 +19,13 @@ export default function Header({}: Props): ReactElement {
         
     }
 
+    const [username, setUsername] = useState('')
+    useEffect(() => {
+        if(localStorage['users']) {
+            setUsername(JSON.parse(localStorage['users']).username)
+        }
+    })
+
     const logout = () => {
         localStorage.removeItem('users')
         window.location.href='http://localhost:3000'
@@ -41,6 +48,9 @@ export default function Header({}: Props): ReactElement {
                     </p>
                     <p className="header__link">
                         <NavLink className="header__link_inner" to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
+                    </p>
+                    <p className="header__link">
+                        {username}
                     </p>
                     <p className="header__link">
                         <button onClick={logout}>Logout</button>
