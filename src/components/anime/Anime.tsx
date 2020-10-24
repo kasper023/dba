@@ -7,6 +7,7 @@ import {ThemeContext} from "../game/ThemeProvider";
 interface Props {
     animeList: AnimeModel[]
 }
+//КОММЕНТ
 
 export default function Anime({animeList}: Props): ReactElement {
 
