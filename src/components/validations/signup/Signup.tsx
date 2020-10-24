@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
-import { User } from '../../models/User'
+import { User } from '../../../models/User'
 
 import './Signup.css'
 interface Props {

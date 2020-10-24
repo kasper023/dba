@@ -27,12 +27,12 @@ const calculateWinner = (squares: SquareValue[]): SquareValue => {
 };
 
 const Game: React.FC = () => {
-    const { theme, toggleTheme } = useContext(ThemeContext);
+    const {theme, toggleTheme} = useContext(ThemeContext);
     const [xIsNext, setXIsNext] = useState<boolean>(true);
     const [stepNumber, setStepNumber] = useState<number>(0);
     let [gameCount, setGameCount] = useState(0);
 
-    const [history, setHistory] = useState<{squares: SquareValue[]}[]>([
+    const [history, setHistory] = useState<{ squares: SquareValue[] }[]>([
         {
             squares: Array(9).fill(null)
         }
@@ -94,30 +94,20 @@ const Game: React.FC = () => {
     return (
         <div className="game">
             <div className="game-board">
+                <h2 className={"gameCount"}>
+                    <p>Game count: {gameCount}</p>
+                </h2>
                 <Board
                     squares={current.squares}
                     onClick={i => handleClick(i)}
                 />
-            </div>
-            <div className="game-info">
                 <b>Game INFO:</b>
 
                 <div>{status}</div>
                 <ol>{moves}</ol>
-            </div>
-            <div className="winners">
-                {/*<p>Winners</p>*/}
-                {/*{winners.map((winner, index) =>(*/}
-                {/*    <li key={index}>*/}
-                {/*        <div>{winner}</div>*/}
-                {/*    </li>*/}
-                {/*))}*/}
-                <h2 className={"gameCount"}>
-                    <p>Game count: {gameCount}</p>
-                </h2>
-            </div>
-            <div onClick={toggleTheme} className={"darkLight"}>
-                <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
+                <div onClick={toggleTheme} className={"darkLight"}>
+                    <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
+                </div>
             </div>
 
         </div>
