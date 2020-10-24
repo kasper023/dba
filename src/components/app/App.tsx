@@ -14,6 +14,8 @@ import Footer from '../footer/Footer';
 
 import {ThemeProvider} from "../game/ThemeProvider";
 import About from "../aboutus/About";
+import Posts from "../posts/Posts";
+import {postList} from "../../models/Post";
 
 
 
@@ -48,6 +50,9 @@ function App() {
             <About />
         </Route>
         <Footer />
+        <Route path="/posts">
+          <Posts postList={postList}/>
+        </Route>
       </div>
     </BrowserRouter>
   );
