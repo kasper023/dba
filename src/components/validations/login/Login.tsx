@@ -48,7 +48,7 @@ export default function Login({}: Props): ReactElement {
         <div className="login">
             <div className="container">
                 <div className="login__wrapper">
-                    <h1 className="login__title">Login</h1>
+                    <h1 className="title login__title">Login</h1>
                     <div className="form">
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
                         <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>

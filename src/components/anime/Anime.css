@@ -1,5 +1,6 @@
 .anime {
     padding: 50px 0;
+    box-sizing: border-box;
     /* background-color: #789880; */
 }
 .anime__wrapper {

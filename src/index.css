@@ -55,3 +55,11 @@ a {
 a, button, input {
 	outline: none;
 }
+
+.title {
+	font-size: 35px;
+	font-weight: bold;
+	line-height: 42px;
+	color: #00ff00;
+	margin-bottom: 10px;
+}
