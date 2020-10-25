@@ -23,7 +23,7 @@ function App() {
         <BrowserRouter>
             <div className="app">
                 <Header/>
-                <Route path="/">
+                <Route path="/main">
                     <Main/>
                 </Route>
                 <Route path="/login">
@@ -48,10 +48,10 @@ function App() {
                 <Route path="/about">
                     <About/>
                 </Route>
-                <Footer/>
                 <Route path="/posts">
                     <Posts postList={postList}/>
                 </Route>
+                <Footer/>
             </div>
         </BrowserRouter>
     );

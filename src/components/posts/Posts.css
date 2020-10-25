@@ -5,6 +5,18 @@
 .post__wrapper {
 
 }
+.new-post {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.new-post input, .new-post textarea, .new-post button {
+    margin-top: 10px;
+}
+.new-post textarea {
+    resize: none;
+    height: 100px;
+}
 .post__title {
     text-align: center;
     font-size: 25px;

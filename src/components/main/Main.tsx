@@ -13,9 +13,6 @@ export default function Main({}: Props): ReactElement {
             <div className="container">
                 <div className="main__wrapper">
                     <h1 className="main__title">Welcome to pure site</h1>
-
-
-
                 </div>
             </div>
         </div>

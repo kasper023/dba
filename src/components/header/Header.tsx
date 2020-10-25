@@ -54,7 +54,6 @@ export default function Header({}: Props): ReactElement {
                         <NavLink className="header__link_inner" to="/posts" onClick={e => toggle_link(e)}>Posts</NavLink>
                     </p>
                     <p className="header__link">
-
                         {username}
                     </p>
                     <p className="header__link">
