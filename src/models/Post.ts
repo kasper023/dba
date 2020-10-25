@@ -5,27 +5,27 @@ export interface PostModel{
 
 export let postList: PostModel[] = [
     {
-        "name": "Charlotte_anime",
-        "data": "DARARARARRA" },
+        "name": "Darkhan:",
+        "data": "With the World Tourism Organisation (UNWTO) hosting it's 2019global summit in Nur-Sultan, we look at how they're using tech to become a \"smart city\"." },
     {
-        "name": "Demons Slayer",
-        "data":"dadfdafsdfsdfsd" },
+        "name": "Askar:",
+        "data":"Half-a-million Kazakhs are to have their debts paid by the government as a “one-time action” to help some of the central Asian country’s poorest, ministers announced." },
     {
-        "name": "Naruto Shippuden",
-        "data": "dafsdfsdfsdsdfgsdf" },
+        "name": "Beibarys:",
+        "data": "Hey there" },
     {
-        "name": "Fairy Tail",
-        "data": "dsfsgsfgf" },
+        "name": "Levi:",
+        "data": "Attack on Titans top" },
     {
-        "name": "Bleach" ,
-        "data": "sdfsdfsdfsdf" },
+        "name": "Aron:" ,
+        "data": "Naruto is better" },
     {
-        "name": "Death Note" ,
-        "data": "sdfsdfsdfsdf" },
+        "name": "Aron:" ,
+        "data": "Hey there" },
     {
-        "name": "Shaman King",
-        "data": "sfgsfgsdgsfgghsadsd" },
+        "name": "Aron:",
+        "data": "Hey there" },
     {
-        "name": "Tokyo Ghoul",
-        "data": "sdfsdfffgf" }
+        "name": "Aron:",
+        "data": "Hey there" }
 ]

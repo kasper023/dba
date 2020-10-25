@@ -11,7 +11,6 @@ interface Props {
 
 export default function Anime({animeList}: Props): ReactElement {
 
-    const divRef = React.useRef<HTMLDivElement>(null);
 
     const { theme, toggleTheme } = useContext(ThemeContext);
     
@@ -19,7 +18,7 @@ export default function Anime({animeList}: Props): ReactElement {
          <div className="anime">
              <div className="container">
                 <div className="anime__wrapper">
-                    <h1 className="anime__title">Top 10 anime</h1>
+                    <h1 className="anime__title">Top 8 anime</h1>
                     <div className="container2">
                         <div className="anime__list">
                         {animeList.map((category) => {

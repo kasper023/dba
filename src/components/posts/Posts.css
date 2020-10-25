@@ -1,18 +1,18 @@
-.anime {
+.post {
     padding: 50px 0;
     /* background-color: #789880; */
 }
-.anime__wrapper {
+.post__wrapper {
 
 }
-.anime__title {
+.post__title {
     text-align: center;
     font-size: 25px;
     color: #fff;
     margin-bottom: 30px;
 }
 
-.anime__list {
+.post__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -27,11 +27,11 @@
 
 }
 .card__title {
-    font-size: 20px;
+    font-size: 15px;
     color: black;
 }
-.card__rating {
-    font-size: 10px;
+.card__data {
+    font-size: 20px;
     color: red;
 }
 .theme {
