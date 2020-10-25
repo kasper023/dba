@@ -1,5 +1,6 @@
 import React, {createRef, ReactElement, useEffect, useState} from "react";
 import Game from "../game/Game";
+import {Link, Redirect} from "react-router-dom";
 
 interface Props {
 
@@ -12,17 +13,19 @@ export default function Validation({}: Props): ReactElement {
     useEffect(() => {
         let nick1 = document.querySelector('#nick1')
         let nick2 = document.querySelector('#nick2')
+        let nick11 = nickname1
+        let nick22 = nickname2
         if (nick1) {
-            console.log(nick1);
+            console.log(nick11);
 
-            if (nick1.innerHTML.length < 6) {
+            if (nick11.length < 8) {
                 nick1.classList.add('nick_alarm')
             } else {
                 nick1.classList.remove('nick_alarm')
             }
         }
         if (nick2) {
-            if (nick2.innerHTML.length < 6) {
+            if (nick22.length < 8) {
                 nick2.classList.add('nick_alarm')
             } else {
                 nick2.classList.remove('nick_alarm')
@@ -43,7 +46,6 @@ export default function Validation({}: Props): ReactElement {
         if (textInput.current) {
             textInput.current.focus()
         }
-        return false
     }
 
     return (
