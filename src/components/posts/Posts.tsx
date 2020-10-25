@@ -27,7 +27,7 @@ export default function Posts({postList}: Props): ReactElement {
     })
 
     return (
-        <div className="anime">
+        <div className="anime" ref={divRef} style={{ width: "100%" }} >
             <h1>{message}</h1>
             <div className="container">
                 <div className="anime__wrapper">
