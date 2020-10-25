@@ -3,7 +3,7 @@ import React, {ReactElement, useContext, useEffect, useState} from 'react'
 import {PostModel} from "../../models/Post";
 
 import './Posts.css'
-import {ThemeContext} from "../game/ThemeProvider";
+import {ThemeContext} from "../theme/ThemeProvider";
 
 interface Props {
     postList: PostModel[]

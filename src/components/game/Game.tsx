@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react"
 
 import "./Game.css"
 import Board from "./game-board";
-import {ThemeContext} from "./ThemeProvider";
+import {ThemeContext} from "../theme/ThemeProvider";
 
 export type SquareValue = 'X' | 'O' | null;
 

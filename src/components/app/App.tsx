@@ -12,7 +12,7 @@ import Validation from "../validations/Validation";
 import Main from '../main/Main';
 import Footer from '../footer/Footer';
 
-import {ThemeProvider} from "../game/ThemeProvider";
+import {ThemeProvider} from "../theme/ThemeProvider";
 import About from "../aboutus/About";
 import Posts from "../posts/Posts";
 import {postList} from "../../models/Post";
@@ -49,7 +49,9 @@ function App() {
                     <About/>
                 </Route>
                 <Route path="/posts">
+                    <ThemeProvider>
                     <Posts postList={postList}/>
+                    </ThemeProvider>
                 </Route>
                 <Footer/>
             </div>

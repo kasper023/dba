@@ -3,7 +3,7 @@ import React, {ReactElement, useContext, useState} from 'react'
 import { AnimeModel } from "../../models/Anime";
 
 import './Anime.css'
-import {ThemeContext} from "../game/ThemeProvider";
+import {ThemeContext} from "../theme/ThemeProvider";
 interface Props {
     animeList: AnimeModel[]
 }
