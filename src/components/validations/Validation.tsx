@@ -12,7 +12,6 @@ export default function Validation({}: Props): ReactElement {
     useEffect(() => {
         let nick1 = document.querySelector('#nick1')
         let nick2 = document.querySelector('#nick2')
-
         if (nick1) {
             console.log(nick1);
 
@@ -44,6 +43,7 @@ export default function Validation({}: Props): ReactElement {
         if (textInput.current) {
             textInput.current.focus()
         }
+        return false
     }
 
     return (
