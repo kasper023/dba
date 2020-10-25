@@ -72,7 +72,7 @@ export default function Posts({postList}: Props): ReactElement {
                     <button onClick={add_post}>Add post</button>
                 </div>
                 <div className="post__wrapper">
-                    <h1 className="post__title">News</h1>
+                    <h1 className="title post__title">News</h1>
                     <div className="container2">
                         <div className="post__list">
                             {this_postList.map((category) => {

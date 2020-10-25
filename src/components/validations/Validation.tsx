@@ -49,7 +49,7 @@ export default function Validation({}: Props): ReactElement {
     return (
         <div className={"validation"}>
             <div className={"container"}>
-                <h1 className="valid__title">
+                <h1 className="title valid__title">
                     Validation
                 </h1>
                 <form action="#" className="form">

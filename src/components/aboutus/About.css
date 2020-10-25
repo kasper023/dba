@@ -1,0 +1,23 @@
+.about {
+    padding: 50px 0;
+}
+.about__title {
+    margin-bottom: 30px;
+}
+.about__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.student {
+    text-align: center;
+}
+.student__img {
+    border-radius: 50%;
+    width: 100px;
+}
+.student__name {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}

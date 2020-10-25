@@ -1,12 +1,29 @@
 .main {
     padding: 50px 0;
-    background-color: #abd945;
-}
-.main__wrapper {
-
 }
 .main__title {
-    font-size: 32px;
+    margin-bottom: 30px;
+}
+.main__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.main__intro {
+    display: flex;
+    flex-direction: column;
+}
+.main__intro h2 {
+    font-size: 25px;
     font-weight: bold;
-    color: #fff;
+}
+.main__name {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+.main__video {
+    width: 500px;
+    height: 300px;
 }

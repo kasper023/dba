@@ -75,7 +75,7 @@ export default function Signup({}: Props): ReactElement {
         <div className="signup">
             <div className="container">
                 <div className="signup__wrapper">
-                    <h1 className="signup__title">Sign Up</h1>
+                    <h1 className="title signup__title">Sign Up</h1>
                     <div className="form">
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
                         <input type="text" placeholder="e-mail" onChange={(e) => {setMail(e.target.value)}}/> <br/>

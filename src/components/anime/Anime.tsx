@@ -18,7 +18,7 @@ export default function Anime({animeList}: Props): ReactElement {
          <div className="anime">
              <div className="container">
                 <div className="anime__wrapper">
-                    <h1 className="anime__title">Top 10 products</h1>
+                    <h1 className="title anime__title">Top 10 products</h1>
                     <div className="container2">
                         <div className="anime__list">
                         {animeList.map((category) => {
