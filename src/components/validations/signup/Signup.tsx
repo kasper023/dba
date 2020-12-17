@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import { User } from '../../../models/User'
 
@@ -13,6 +14,7 @@ export default function Signup({}: Props): ReactElement {
     const [mail, setMail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(<></>)
+    const [redirect, setRedirect] = useState(false)
     let user: User
 
     useEffect(() => {
@@ -60,6 +62,7 @@ export default function Signup({}: Props): ReactElement {
             }
         }
         clearForm()
+        setRedirect(true)
     }
 
     const clearForm = () => {
@@ -73,8 +76,10 @@ export default function Signup({}: Props): ReactElement {
 
     return (
         <div className="signup">
+            {redirect ? <Redirect to="/main" push/> : 
             <div className="container">
                 <div className="signup__wrapper">
+                    
                     <h1 className="title signup__title">Sign Up</h1>
                     <div className="form">
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
@@ -87,6 +92,7 @@ export default function Signup({}: Props): ReactElement {
                     </div>
                 </div>
             </div>
+            }
         </div>
     )
 }
