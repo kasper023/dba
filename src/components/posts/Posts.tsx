@@ -19,10 +19,11 @@ export default function Posts({postList}: Props): ReactElement {
 
     const divRef = React.useRef<HTMLDivElement>(null);
 
+
     const {theme, toggleTheme} = useContext(ThemeContext);
 
     const add_post = () => {
-        if(author.length > 3 && author.length < 10 && content) {
+        if (author.length > 3 && author.length < 10 && content) {
             postList.push({
                 name: author,
                 data: content
@@ -30,8 +31,7 @@ export default function Posts({postList}: Props): ReactElement {
             setThis_postList(postList)
             console.log(postList);
             show_posts()
-        }
-        else {
+        } else {
             alert('Invalid post')
         }
     }
@@ -51,7 +51,7 @@ export default function Posts({postList}: Props): ReactElement {
                     </li>
                 </ul>`
             }).join('<br>')
-        ) 
+        )
     }
 
     useEffect(() => {
@@ -63,12 +63,14 @@ export default function Posts({postList}: Props): ReactElement {
     })
 
     return (
-        <div className="post" ref={divRef} style={{ width: "100%" }} >
+        <div className="post" ref={divRef} style={{width: "100%"}}>
             <div className="container">
                 <h1>{message}</h1>
                 <div className="new-post">
-                    <input className="new-post__input" placeholder="Author" onChange={(e) => setAuthor(e.target.value)}></input>
-                    <textarea className="new-post__input" placeholder="Content" onChange={(e) => setContent(e.target.value)}></textarea>
+                    <input className="new-post__input" placeholder="Author"
+                           onChange={(e) => setAuthor(e.target.value)}></input>
+                    <textarea className="new-post__input" placeholder="Content"
+                              onChange={(e) => setContent(e.target.value)}></textarea>
                     <button onClick={add_post}>Add post</button>
                 </div>
                 <div className="post__wrapper">

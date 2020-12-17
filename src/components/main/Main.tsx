@@ -1,6 +1,5 @@
 import React, { ReactElement } from 'react';
-import './Main.css'
-
+import './Main.css';
 
 
 interface Props {
@@ -8,6 +7,7 @@ interface Props {
 }
 
 export default function Main({}: Props): ReactElement {
+
     return (
         <div className="main">
             <div className="container">
@@ -21,7 +21,10 @@ export default function Main({}: Props): ReactElement {
                     </div>
                     <iframe className="main__video" src="https://www.youtube.com/embed/oJwMiU3RJmA"></iframe>
                 </div>
+
             </div>
+
+
         </div>
     )
  }
