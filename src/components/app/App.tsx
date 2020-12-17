@@ -42,7 +42,7 @@ function App() {
                 </Route>
                 <Route path="/anime">
                     <ThemeProvider>
-                        <Anime animeList={animeList}/>
+                        <Anime />
                     </ThemeProvider>
                 </Route>
                 <Route path="/about">

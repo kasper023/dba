@@ -1,18 +1,27 @@
-import React, {ReactElement, useContext, useState} from 'react'
+import React, {ReactElement, useContext, useEffect, useState} from 'react'
 import { AnimeModel } from "../../models/Anime";
 import './Anime.css'
 import {ThemeContext} from "../theme/ThemeProvider";
+import showAnime from "../../axios/axios";
 
 
 interface Props {
-    animeList: AnimeModel[]
+
 }
 
-export default function Anime({animeList}: Props): ReactElement {
+export default function Anime({}: Props): ReactElement {
 
-    const divRef = React.useRef<HTMLDivElement>(null);
-
+    const [anime, setAnime] = useState<AnimeModel[]>([])
     const { theme, toggleTheme } = useContext(ThemeContext);
+
+    useEffect(() => {
+        async function getAnimeList() {
+            const response = await showAnime.get('/animeList')
+            const animes = response.data
+            setAnime(animes)
+        }
+        getAnimeList()
+    }, [])
     
     return (
          <div className="anime">
@@ -21,7 +30,7 @@ export default function Anime({animeList}: Props): ReactElement {
                     <h1 className="title anime__title">Top 10 products</h1>
                     <div className="container2">
                         <div className="anime__list">
-                        {animeList.map((category) => {
+                        {anime.map((category) => {
                             return <ul className="catalog">
                                 <li className="card">
                                     <img className="card__image" src={category.image} alt="test"/>

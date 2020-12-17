@@ -4,6 +4,7 @@ export interface AnimeModel{
     rating: number;
 }
 
+/*
 export let animeList: AnimeModel[] = [
         {"image": "https://upload.wikimedia.org/wikipedia/ru/5/51/Charlotte_anime.jpg",
             "name": "Charlotte_anime", "rating": 10 },
@@ -22,3 +23,4 @@ export let animeList: AnimeModel[] = [
         {"image":"https://upload.wikimedia.org/wikipedia/ru/6/65/Tokyo_Ghoul_volume_1.jpg",
             "name": "Tokyo Ghoul", "rating": 8 }
     ]
+*/
