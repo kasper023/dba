@@ -9,6 +9,7 @@ interface Props {
 export default function Validation({}: Props): ReactElement {
     const [nickname1, setNickname1] = useState('')
     const [nickname2, setNickname2] = useState('')
+    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
         let nick1 = document.querySelector('#nick1')
@@ -50,7 +51,7 @@ export default function Validation({}: Props): ReactElement {
 
     return (
         <div className={"validation"}>
-            <div className={"container"}>
+                <div className={"container"}>
                 <h1 className="title valid__title">
                     Validation
                 </h1>
