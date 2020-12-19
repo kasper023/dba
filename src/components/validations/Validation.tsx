@@ -54,7 +54,7 @@ export default function Validation({}: Props): ReactElement {
                 <h1 className="title valid__title">
                     Validation
                 </h1>
-                <form action="#" className="form">
+                <form action="/game" className="form">
                     <input id="nick1" type="text" placeholder="Nickname for first user" onChange={(e) => {
                         setNickname1(e.target.value)
                     }} style={{
