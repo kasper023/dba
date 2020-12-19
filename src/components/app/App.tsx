@@ -12,7 +12,7 @@ import {ThemeProvider} from "../theme/ThemeProvider";
 import About from "../aboutus/About";
 import Posts from "../posts/Posts";
 import {postList} from "../../models/Post";
-import {animeList} from "../../models/Anime";
+
 
 const Anime = lazy(()=> import("../anime/Anime"));
 
