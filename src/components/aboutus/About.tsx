@@ -22,6 +22,7 @@ export default function About({}: Props){
                     <div className="student">
                         <a href="https://t.me/dorochimaru" target="_blank"><img className="student__img" src="https://cdn4.telesco.pe/file/hMvBkytFOC3A_0jPMW22uoEuW_-b8LvFmw5uSB_M9jklidRATmJzF1wK_9tDvBoLT8FGaObV_dBgFIxAl5BiUugcY_cnxYkb8LXwEG6yskaLogACbozobdEc5Md3Nup69m7eyiKuYWI9RWur10Rq8aKsjSe3-39I7HmTUTHtzexRbzF_ia_R4QMFCGvFoJVXfSgiwC-RazU9HblxcUm-na5d8OIXX9F1SYTM3Aq3YU05rw4LO3vHqAKrJ5sQR9eXtPQO8G9Be-ARTuz_CSZM5HQG_9A1tGT3ljFI2-PvZbv539oVlAI1WzuOViLSZgebOpsAC_gx1ufh8w1qTXG1nw.jpg" alt="user"/></a>
                         <h3 className="student__name">Zhetkergen Darkhan</h3>
+
                     </div>
                 </div>
             </div>
