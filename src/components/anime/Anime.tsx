@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext, useEffect, useState} from 'react'
+import React, {ReactElement, useContext, useEffect,Fragment, useState} from 'react'
 import { AnimeModel } from "../../models/Anime";
 import './Anime.css'
 import {ThemeContext} from "../theme/ThemeProvider";
@@ -20,7 +20,7 @@ export default function Anime({}: Props): ReactElement {
             const animes = response.data
             setAnime(animes)
         }
-        getAnimeList()
+            getAnimeList()
     }, [])
     
     return (
@@ -32,6 +32,7 @@ export default function Anime({}: Props): ReactElement {
                         <div className="anime__list">
                         {anime.map((category) => {
                             return <ul className="catalog">
+
                                 <li className="card">
                                     <img className="card__image" src={category.image} alt="test"/>
                                     <div className="card__description">
@@ -39,6 +40,7 @@ export default function Anime({}: Props): ReactElement {
                                         <div className="card__rating">Rating: {category.rating}<i className="fa fa-star" aria-hidden="true"></i></div>
                                     </div>
                                 </li>
+
                             </ul>
                             })
                         }

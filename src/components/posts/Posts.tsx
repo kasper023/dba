@@ -78,17 +78,20 @@ export default function Posts({postList}: Props): ReactElement {
                     <div className="container2">
                         <div className="post__list">
                             {this_postList.map((category) => {
-                                return <ul className="catalog">
+                                return (
+                                <React.Fragment key={category.data}>
+                                    <ul className="catalog">
                                     <li className="card">
 
                                         <div className="card__description">
-                                            <h3 className="card__title">{category.name}</h3>
-                                            <div className="card__data">News: {category.data}</div>
-
+                                            <dt className="card__title">News by {category.name}</dt>
+                                            <dd className="card__data"> {category.data}</dd>
                                         </div>
 
                                     </li>
                                 </ul>
+                                </React.Fragment>
+                                )
                             })
                             }
                         </div>
