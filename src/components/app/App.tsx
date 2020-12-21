@@ -13,9 +13,8 @@ import About from "../aboutus/About";
 import {postList} from "../../models/Post";
 import ErrorBoundary from "../error/ErrorBoundary";
 import Preloader from "../preloader/Preloader";
-import Products from "../Products";
-import {AppProvider} from "../context";
-import List from "../List";
+import {AppProvider} from "../context/context";
+import ToDoList from "../todolist/ToDoList";
 
 
 //lazy
@@ -89,9 +88,12 @@ function App() {
                         <ThemeProvider>
                             <Posts postList={postList}/>
                         </ThemeProvider>
+
+                    </Route>
+
+                    <Route path ='/todolist'>
                         <AppProvider>
-                            <Products/>
-                            <List/>
+                        <ToDoList/>
                         </AppProvider>
                     </Route>
                     <Footer/>

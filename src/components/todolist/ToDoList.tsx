@@ -1,8 +1,9 @@
 import React from "react";
-import { AppContext } from "./context";
-import { Types } from "./reducers";
+import { AppContext } from "../context/context";
+import { Types } from "../redux/reducers";
+import s from "./ToDoList.module.css"
 
-const List = () => {
+const ToDoList = () => {
     const [form, setForm] = React.useState({
         name: "",
         price: 0
@@ -37,29 +38,34 @@ const List = () => {
     }
 
     return (
-        <div>
-            <input
-                value={form.name}
-                onChange={e => {
+        <div className={s.wrapper}>
+            <h1 className={s.title}>To Do List</h1>
+            <div className={s.forms}>
+            <input value={form.name} onChange={e => {
                     handleForm("name", e.target.value);
                 }}
-                placeholder="Name"
-            />
-            <input
-                value={form.price}
-                type="number"
-                onChange={e => {
+                placeholder="What should i do"/>
+
+
+            <input value={form.price} type="number" onChange={e => {
                     handleForm("price", e.target.value);
                 }}
-                placeholder="Price"
-            />
-            <button onClick={createProduct}>create</button>
-            <div style={{ marginTop: 20 }}>
+                placeholder="Points I Get "/>
+
+                <button className={s.button} onClick={createProduct}>Add</button>
+                </div>
+            <div >
                 {state.products.map(c => (
                     <div>
-                        <span>{c.name}</span>
-                        <span>{c.price}</span>
-                        <button onClick={() => deleteProduct(c.id)}>delete</button>
+                        <div>
+                            To Do:
+                        {c.name}
+                        </div>
+                        <div>
+                            Points that you get:
+                        {c.price} points
+                        </div>
+                        <button className={s.button} onClick={() => deleteProduct(c.id)}>delete</button>
                     </div>
                 ))}
             </div>
@@ -67,4 +73,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default ToDoList;

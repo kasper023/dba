@@ -4,7 +4,7 @@ import {
     shoppingCartReducer,
     ProductActions,
     ShoppingCartActions
-} from "./reducers";
+} from "../redux/reducers";
 
 type ProductType = {
     id: number;

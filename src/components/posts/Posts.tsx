@@ -1,9 +1,10 @@
-import React, {ReactElement, useCallback, useContext, useEffect, useState} from 'react'
+import React, {ReactElement, useContext, useEffect, useState} from 'react'
 
 import {postList, PostModel} from "../../models/Post";
 
 import s from './Posts.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";
+
 
 interface Props {
     postList: PostModel[]

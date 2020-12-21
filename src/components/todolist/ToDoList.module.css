@@ -1,0 +1,39 @@
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: lime;
+
+}
+
+
+.forms input {
+    text-align: center;
+    width: 20%;
+    height: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #000;
+}
+
+
+.button {
+    width: 20%;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.button:hover{
+    color: #fff;
+    background-color: #000;
+}

@@ -3,6 +3,9 @@ import { AnimeModel } from "../../models/Anime";
 import s from './Anime.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";
 import showAnime from "../../axios/axios";
+import {AppContext, AppProvider} from "../context/context";
+import {Types} from "../redux/reducers";
+import Products from "./products/Products";
 
 
 interface Props {
@@ -13,6 +16,7 @@ export default function Anime({}: Props): ReactElement {
 
     const [anime, setAnime] = useState<AnimeModel[]>([])
     const { theme, toggleTheme } = useContext(ThemeContext);
+    const { state, dispatch } = React.useContext(AppContext);
     useEffect(() => {
         async function getAnimeList() {
             const response = await showAnime.get('/animeList')
@@ -37,6 +41,11 @@ export default function Anime({}: Props): ReactElement {
                                     <div className={s.card__description}>
                                         <h3 className={s.card__title}>{category.name}</h3>
                                         <div className={s.card__rating}>Rating: {category.rating}<i className="fa fa-star" aria-hidden="true"></i></div>
+                                        <AppProvider>
+                                            <Products/>
+                                        </AppProvider>
+
+
                                     </div>
                                 </li>
 
