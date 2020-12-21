@@ -3,6 +3,7 @@ import React, {useContext, useEffect, useState} from "react"
 import s from "./Game.module.css"
 import Board from "./game-board";
 import {ThemeContext} from "../theme/ThemeProvider";
+import {useMemo} from "react";
 
 export type SquareValue = 'X' | 'O' | null;
 
@@ -91,6 +92,12 @@ const Game: React.FC = () => {
     useEffect(() => {
         document.title = `Game count: ${gameCount}`;
     }, [gameCount]);
+    const memoizedValue =  useMemo( () => {
+        let l = [];
+        if(stepNumber % 2 == 0) l.push("even")
+        else l.push("odd")
+        return l
+    },[stepNumber])
     return (
         <div className={s.game}>
             <div className={s.game_board}>
@@ -101,10 +108,12 @@ const Game: React.FC = () => {
                     squares={current.squares}
                     onClick={i => handleClick(i)}
                 />
+                <h1></h1>
                 <b>Game INFO:</b>
 
                 <div>{status}</div>
                 <ol>{moves}</ol>
+                {memoizedValue}
                 <div onClick={toggleTheme} className={s.darkLight}>
                     <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
                 </div>

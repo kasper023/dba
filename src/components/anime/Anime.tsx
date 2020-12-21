@@ -1,4 +1,4 @@
-import React, {ReactElement, useContext, useEffect,Fragment, useState} from 'react'
+import React, {ReactElement, useContext, useEffect, Fragment, useState, useCallback} from 'react'
 import { AnimeModel } from "../../models/Anime";
 import s from './Anime.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";
@@ -13,16 +13,14 @@ export default function Anime({}: Props): ReactElement {
 
     const [anime, setAnime] = useState<AnimeModel[]>([])
     const { theme, toggleTheme } = useContext(ThemeContext);
-
     useEffect(() => {
         async function getAnimeList() {
             const response = await showAnime.get('/animeList')
             const animes = response.data
             setAnime(animes)
         }
-            getAnimeList()
     }, [])
-    
+
     return (
          <div className={s.anime}>
              <div className={s.container}>

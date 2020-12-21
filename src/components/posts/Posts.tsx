@@ -1,6 +1,6 @@
-import React, {ReactElement, useContext, useEffect, useState} from 'react'
+import React, {ReactElement, useCallback, useContext, useEffect, useState} from 'react'
 
-import {PostModel} from "../../models/Post";
+import {postList, PostModel} from "../../models/Post";
 
 import s from './Posts.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";

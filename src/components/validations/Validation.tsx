@@ -70,7 +70,7 @@ export default function Validation({}: Props): ReactElement {
                     }}>Let's start
                     </button>
                 </form>
-            </div>
+            </div>ha
         </div>
     );
 }

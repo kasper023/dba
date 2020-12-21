@@ -1,5 +1,5 @@
 import React from "react";
-import prelodader from "../../images/loader.gif";
+import prelodader from "../../images/user.png";
 
 
 interface Props {
