@@ -19,6 +19,7 @@ export default function Anime({}: Props): ReactElement {
             const animes = response.data
             setAnime(animes)
         }
+        getAnimeList();
     }, [])
 
     return (
