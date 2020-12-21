@@ -1,5 +1,5 @@
-import React, {lazy, Suspense} from 'react';
-import {Route, Switch, BrowserRouter} from "react-router-dom";
+import React, {lazy, Profiler, Suspense} from 'react';
+import {Route, BrowserRouter} from "react-router-dom";
 import Header from '../header/Header';
 import Login from '../validations/login/Login';
 import Signup from '../validations/signup/Signup';
@@ -14,15 +14,33 @@ import {postList} from "../../models/Post";
 import ErrorBoundary from "../error/ErrorBoundary";
 import Preloader from "../preloader/Preloader";
 import Products from "../Products";
-import { AppProvider } from "../context";
+import {AppProvider} from "../context";
 import List from "../List";
+
 
 //lazy
 const Anime = lazy(() => import("../anime/Anime"));
-const Posts = lazy(()=>import("../posts/Posts"))
+const Posts = lazy(() => import("../posts/Posts"))
 
 
 function App() {
+    const callbackFunction = (
+        id: string,
+        phase: "mount" | "update",
+        actualDuration: number,
+        baseDuration: number,
+        startTime: number,
+        commitTime: number,
+        interactions: Set<{ id: number; name: string; timestamp: number }>
+    ) => {
+        console.log("Id is :", id);
+        console.log("Phase is :", phase);
+        console.log("Actual Duration is :", actualDuration);
+        console.log("Base Duration is :", baseDuration);
+        console.log("Start Time is :", startTime);
+        console.log("Commit Time is :", commitTime);
+        console.log("Interactions is :", interactions);
+    };
     return (
         <BrowserRouter>
             <Suspense fallback={<Preloader/>}>
@@ -30,8 +48,8 @@ function App() {
 
                     <Header/>
                     <AppProvider>
-                        <Products />
-                        <List />
+                        <Products/>
+                        <List/>
                     </AppProvider>
                     <Route path="/main">
                         <ErrorBoundary>
@@ -59,8 +77,11 @@ function App() {
                     <Route path="/anime">
                         <ThemeProvider>
                             <ErrorBoundary>
-                                <Anime/>
+                                <Profiler id="Anime" onRender={callbackFunction}>
+                                    <Anime/>
+                                </Profiler>
                             </ErrorBoundary>
+
                         </ThemeProvider>
                     </Route>
                     <Route path="/about">

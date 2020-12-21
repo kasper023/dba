@@ -18,8 +18,11 @@ export default function Anime({}: Props): ReactElement {
             const response = await showAnime.get('/animeList')
             const animes = response.data
             setAnime(animes)
+
         }
-    }, [])
+        getAnimeList();
+    },  [])
+
 
     return (
          <div className={s.anime}>
