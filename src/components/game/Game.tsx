@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react"
+import React, {useCallback, useContext, useEffect, useState} from "react"
 
 import s from "./Game.module.css"
 import Board from "./game-board";
@@ -39,7 +39,7 @@ const Game: React.FC = () => {
         }
     ]);
 
-    const handleClick = (i: number): void => {
+    const handleClick = useCallback((i: number): void => {
         const newHistory = history.slice(0, stepNumber + 1);
         const current = newHistory[newHistory.length - 1];
         const squares = current.squares.slice();
@@ -54,7 +54,7 @@ const Game: React.FC = () => {
         ]));
         setStepNumber(newHistory.length);
         setXIsNext(!xIsNext);
-    };
+    },[stepNumber]);
 
     const jumpTo = (step: number): void => {
         setStepNumber(step);
@@ -93,10 +93,8 @@ const Game: React.FC = () => {
         document.title = `Game count: ${gameCount}`;
     }, [gameCount]);
     const memoizedValue =  useMemo( () => {
-        let l = [];
-        if(stepNumber % 2 == 0) l.push("even")
-        else l.push("odd")
-        return l
+        if(stepNumber % 2 == 0) return "even";
+        else return "odd";
     },[stepNumber])
     return (
         <div className={s.game}>

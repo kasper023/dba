@@ -39,7 +39,7 @@ export default function Validation({}: Props): ReactElement {
     function SubmitForm() {
         if (nickname1.length >= 8 && nickname2.length >= 8) {
             alert("everything ok :)")
-            window.location.href = 'http://localhost:3000/game';
+            window.location.href = `http://localhost:3000/game/`;
         } else {
             alert('nickname doesnt correct')
         }
