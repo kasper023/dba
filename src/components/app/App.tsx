@@ -10,10 +10,11 @@ import Main from '../main/Main';
 import Footer from '../footer/Footer';
 import {ThemeProvider} from "../theme/ThemeProvider";
 import About from "../aboutus/About";
-import {postList} from "../../models/Post";
 import ErrorBoundary from "../error/ErrorBoundary";
 import Preloader from "../preloader/Preloader";
+
 import {AppProvider} from "../context/context";
+
 import ToDoList from "../todolist/ToDoList";
 
 
@@ -86,7 +87,7 @@ function App() {
                     </Route>
                     <Route path="/posts">
                         <ThemeProvider>
-                            <Posts postList={postList}/>
+                            <Posts/>
                         </ThemeProvider>
 
                     </Route>

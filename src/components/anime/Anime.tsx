@@ -6,6 +6,9 @@ import showAnime from "../../axios/axios";
 import {AppContext, AppProvider} from "../context/context";
 import {Types} from "../redux/reducers";
 import Products from "./products/Products";
+import {Simulate} from "react-dom/test-utils";
+
+
 
 
 interface Props {
@@ -21,9 +24,16 @@ export default function Anime({}: Props): ReactElement {
         async function getAnimeList() {
             const response = await showAnime.get('/animeList')
             const animes = response.data
+
             setAnime(animes)
+
+            if(anime.length==0){
+        throw Error
+             }
         }
         getAnimeList();
+
+
     }, [])
 
     return (

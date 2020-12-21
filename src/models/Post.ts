@@ -1,9 +1,10 @@
 export interface PostModel{
+    id:number;
     name: string;
-    data:string
+    data:string;
 }
 
-export let postList: PostModel[] = [
+/*export let postList: PostModel[] = [
     {
         "name": "Darkhan:",
         "data": "With the World Tourism Organisation (UNWTO) hosting it's 2019global summit in Nur-Sultan, we look at how they're using tech to become a \"smart city\"." },
@@ -28,4 +29,4 @@ export let postList: PostModel[] = [
     {
         "name": "Aron:",
         "data": "Hey there" }
-]
+]*/

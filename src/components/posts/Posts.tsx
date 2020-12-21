@@ -1,59 +1,29 @@
 import React, {ReactElement, useContext, useEffect, useState} from 'react'
-
-import {postList, PostModel} from "../../models/Post";
-
+import {PostModel} from "../../models/Post";
 import s from './Posts.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";
+import showAnime from "../../axios/axios";
+
 
 
 interface Props {
-    postList: PostModel[]
+
 }
 
-export default function Posts({postList}: Props): ReactElement {
+export default function Posts({}: Props): ReactElement {
     const [message, setMessage] = useState('Hello,Dear Friend!!!');
     const [author, setAuthor] = useState('');
     const [content, setContent] = useState('');
-    const [posts, setPosts] = useState('')
-
-    const [this_postList, setThis_postList] = useState(postList)
-
+    const [posts, setPosts] = useState<PostModel[]>([])
     const divRef = React.useRef<HTMLDivElement>(null);
+    const[pressed,setPressed]=useState(false)
 
 
     const {theme, toggleTheme} = useContext(ThemeContext);
 
-    const add_post = () => {
-        if (author.length > 3 && author.length < 10 && content) {
-            postList.push({
-                name: author,
-                data: content
-            })
-            setThis_postList(postList)
-            console.log(postList);
-            show_posts()
-        } else {
-            alert('Invalid post')
-        }
-    }
 
-    const show_posts = () => {
-        setPosts(
-            this_postList.map((category) => {
-                return `<ul className={s.catalog}>
-                    <li className={s.card}>
 
-                        <div className={s.card__description}>
-                            <h3 className={s.card__title}>${category.name}</h3>
-                            <div className={s.card__data}>News: ${category.data}</div>
 
-                        </div>
-
-                    </li>
-                </ul>`
-            }).join('<br>')
-        )
-    }
 
     useEffect(() => {
         console.log('trigger use effect hook');
@@ -61,7 +31,33 @@ export default function Posts({postList}: Props): ReactElement {
         setTimeout(() => {
             setMessage("You can add your news about something");
         }, 2000)
+
     })
+
+    useEffect(()=>{
+        async function getPost (){
+            const response = await showAnime.get('/postList')
+            const posts = response.data
+            setPosts(posts)
+            setPressed(false)
+
+
+        }
+        getPost()
+
+    },[pressed]
+    )
+
+
+    async function Add(){
+        let posts:PostModel={id:5,name:author,data:content}
+       const response= await showAnime.post("/postList",posts)
+        setPressed(true)
+
+
+    }
+
+
 
     return (
         <div className={s.post} ref={divRef} style={{width: "100%"}}>
@@ -72,13 +68,13 @@ export default function Posts({postList}: Props): ReactElement {
                            onChange={(e) => setAuthor(e.target.value)}></input>
                     <textarea className={s.new_post__input} placeholder="Content"
                               onChange={(e) => setContent(e.target.value)}></textarea>
-                    <button onClick={add_post}>Add post</button>
+                    <button onClick={Add} >Add post</button>
                 </div>
                 <div className={s.post__wrapper}>
                     <h1 className={s.post__title}>News</h1>
                     <div className={s.container2}>
                         <div className={s.post__list}>
-                            {this_postList.map((category) => {
+                            {posts.map((category) => {
                                 return (
                                 <React.Fragment key={category.data}>
                                     <ul className={s.catalog}>
