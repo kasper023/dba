@@ -1,6 +1,5 @@
 import React, {createRef, ReactElement, useEffect, useState} from "react";
-import Game from "../game/Game";
-import {Link, Redirect} from "react-router-dom";
+
 
 interface Props {
 

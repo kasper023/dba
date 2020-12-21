@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect } from 'react'
 
-import './Login.css'
+import s from './Login.module.css'
 interface Props {
     
 }
@@ -45,14 +45,14 @@ export default function Login({}: Props): ReactElement {
     }
 
     return (
-        <div className="login">
-            <div className="container">
-                <div className="login__wrapper">
-                    <h1 className="title login__title">Login</h1>
-                    <div className="form">
+        <div className={s.login}>
+            <div className={s.container}>
+                <div className={s.login__wrapper}>
+                    <h1 className={s.login__title}>Login</h1>
+                    <div className={s.form}>
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
                         <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
-                        <div className="buttons">
+                        <div className={s.buttons}>
                             <button onClick={() => {clearForm()}}>Cancel</button>
                             <button onClick={() => {submitForm()}}>Submit</button>
                         </div>

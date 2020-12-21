@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 import { User } from '../../../models/User'
 
-import './Signup.css'
+import s from './Signup.module.css'
 interface Props {
     
 }
@@ -75,17 +75,17 @@ export default function Signup({}: Props): ReactElement {
     }
 
     return (
-        <div className="signup">
+        <div className={s.signup}>
             {redirect ? <Redirect to="/main" push/> : 
-            <div className="container">
-                <div className="signup__wrapper">
+            <div className={s.container}>
+                <div className={s.signup__wrapper}>
                     
-                    <h1 className="title signup__title">Sign Up</h1>
-                    <div className="form">
+                    <h1 className={s.signup__title}>Sign Up</h1>
+                    <div className={s.form}>
                         <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/> <br/>
                         <input type="text" placeholder="e-mail" onChange={(e) => {setMail(e.target.value)}}/> <br/>
                         <input id="pass" type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/> <br/>
-                        <div className="buttons">
+                        <div className={s.buttons}>
                             <button onClick={() => {clearForm()}}>Cancel</button>
                             <button onClick={() => {submitForm()}}>Submit</button>
                         </div>

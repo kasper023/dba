@@ -2,7 +2,7 @@ import React, {ReactElement, useContext, useEffect, useState} from 'react'
 
 import {PostModel} from "../../models/Post";
 
-import './Posts.css'
+import s from './Posts.module.css'
 import {ThemeContext} from "../theme/ThemeProvider";
 
 interface Props {
@@ -39,12 +39,12 @@ export default function Posts({postList}: Props): ReactElement {
     const show_posts = () => {
         setPosts(
             this_postList.map((category) => {
-                return `<ul className="catalog">
-                    <li className="card">
+                return `<ul className={s.catalog}>
+                    <li className={s.card}>
 
-                        <div className="card__description">
-                            <h3 className="card__title">${category.name}</h3>
-                            <div className="card__data">News: ${category.data}</div>
+                        <div className={s.card__description}>
+                            <h3 className={s.card__title}>${category.name}</h3>
+                            <div className={s.card__data}>News: ${category.data}</div>
 
                         </div>
 
@@ -63,29 +63,29 @@ export default function Posts({postList}: Props): ReactElement {
     })
 
     return (
-        <div className="post" ref={divRef} style={{width: "100%"}}>
-            <div className="container">
+        <div className={s.post} ref={divRef} style={{width: "100%"}}>
+            <div className={s.container}>
                 <h1>{message}</h1>
-                <div className="new-post">
-                    <input className="new-post__input" placeholder="Author"
+                <div className={s.new_post}>
+                    <input className={s.new_post__input} placeholder="Author"
                            onChange={(e) => setAuthor(e.target.value)}></input>
-                    <textarea className="new-post__input" placeholder="Content"
+                    <textarea className={s.new_post__input} placeholder="Content"
                               onChange={(e) => setContent(e.target.value)}></textarea>
                     <button onClick={add_post}>Add post</button>
                 </div>
-                <div className="post__wrapper">
-                    <h1 className="title post__title">News</h1>
-                    <div className="container2">
-                        <div className="post__list">
+                <div className={s.post__wrapper}>
+                    <h1 className={s.post__title}>News</h1>
+                    <div className={s.container2}>
+                        <div className={s.post__list}>
                             {this_postList.map((category) => {
                                 return (
                                 <React.Fragment key={category.data}>
-                                    <ul className="catalog">
-                                    <li className="card">
+                                    <ul className={s.catalog}>
+                                    <li className={s.card}>
 
-                                        <div className="card__description">
-                                            <dt className="card__title">News by {category.name}</dt>
-                                            <dd className="card__data"> {category.data}</dd>
+                                        <div className={s.card__description}>
+                                            <dt className={s.card__title}>News by {category.name}</dt>
+                                            <dd className={s.card__data}> {category.data}</dd>
                                         </div>
 
                                     </li>
@@ -97,7 +97,7 @@ export default function Posts({postList}: Props): ReactElement {
                         </div>
                     </div>
                 </div>
-                <div onClick={toggleTheme} className="theme">
+                <div onClick={toggleTheme} className={s.theme}>
                     {theme === 'light' ? 'dark' : 'light'}
                 </div>
             </div>

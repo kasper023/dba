@@ -5,6 +5,7 @@
 }
 .header__wrapper {
     display: flex;
+    margin-left: 20px;
 }
 .header__link {
     font-size: 20px;
@@ -18,3 +19,5 @@
 .header__link_inner:hover {
     color: #fff;
 }
+
+

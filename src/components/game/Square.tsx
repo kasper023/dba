@@ -1,5 +1,6 @@
 import * as React from "react";
 import {SquareValue} from "./Game";
+import s from "./Game.module.css";
 
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const Square: React.FC<Props> = props => {
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className={s.square} onClick={props.onClick}>
             {props.value}
         </button>
     );

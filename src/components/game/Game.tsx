@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react"
 
-import "./Game.css"
+import s from "./Game.module.css"
 import Board from "./game-board";
 import {ThemeContext} from "../theme/ThemeProvider";
 
@@ -92,9 +92,9 @@ const Game: React.FC = () => {
         document.title = `Game count: ${gameCount}`;
     }, [gameCount]);
     return (
-        <div className="game">
-            <div className="game-board">
-                <h2 className={"gameCount"}>
+        <div className={s.game}>
+            <div className={s.game_board}>
+                <h2 className={s.gameCount}>
                     <p>Game count: {gameCount}</p>
                 </h2>
                 <Board
@@ -105,7 +105,7 @@ const Game: React.FC = () => {
 
                 <div>{status}</div>
                 <ol>{moves}</ol>
-                <div onClick={toggleTheme} className={"darkLight"}>
+                <div onClick={toggleTheme} className={s.darkLight}>
                     <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
                 </div>
             </div>

@@ -2,7 +2,7 @@ body {
     font: 14px "Century Gothic", Futura, sans-serif;
 }
 
-.board-row:after {
+.board_row:after {
     clear: both;
     content: "";
     display: table;
@@ -47,7 +47,7 @@ body {
     margin-top: 70px;
 }
 
-.game-info {
+.game_info {
     margin-top: 20px;
 }
 .validation{
@@ -57,7 +57,7 @@ body {
 .validation>input{
     margin-bottom: 20px;
 }
-.game-board{
+.game_board{
     margin-right: 30px;
     text-align: center;
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import "./Game.css"
+import s from "./Game.module.css"
 import {ReactNode} from "react";
 import {SquareValue} from "./Game";
 import Square from "./Square";
@@ -22,17 +22,17 @@ const Board: React.FC<BoardProps> = props => {
 
     return (
         <div>
-            <div className="board-row">
+            <div className={s.board_row}>
                 {renderSquare(0)}
                 {renderSquare(1)}
                 {renderSquare(2)}
             </div>
-            <div className="board-row">
+            <div className={s.board_row}>
                 {renderSquare(3)}
                 {renderSquare(4)}
                 {renderSquare(5)}
             </div>
-            <div className="board-row">
+            <div className={s.board_row}>
                 {renderSquare(6)}
                 {renderSquare(7)}
                 {renderSquare(8)}

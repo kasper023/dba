@@ -4,7 +4,7 @@ import Header from '../header/Header';
 import Login from '../validations/login/Login';
 import Signup from '../validations/signup/Signup';
 import Game from "../game/Game";
-import './App.css';
+import style from './App.module.css';
 import Validation from "../validations/Validation";
 import Main from '../main/Main';
 import Footer from '../footer/Footer';
@@ -23,7 +23,7 @@ function App() {
     return (
         <BrowserRouter>
             <Suspense fallback={<h1>Loading...</h1>}>
-                <div className="app">
+                <div className={style.app}>
                     <Header/>
                     <Route path="/main">
                         <ErrorBoundary>

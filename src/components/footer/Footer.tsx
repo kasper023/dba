@@ -1,20 +1,20 @@
 import React, { ReactElement } from 'react'
 
-import './Footer.css'
+import s from './Footer.module.css'
 interface Props {
     
 }
 
 export default function Footer({}: Props): ReactElement {
     return (
-        <div className="footer">
-            <div className="container">
-                <div className="footer__wrapper">
-                    <div className="footer__item">
-                        <div className="footer__icons">
-                            <a target="_blank" href="https://www.instagram.com/" className="footer__link">Instagram</a>
-                            <a target="_blank" href="https://www.facebook.com/" className="footer__link">Facebook</a>
-                            <a target="_blank" href="https://www.youtube.com/" className="footer__link">YouTube</a>
+        <div className={s.footer}>
+            <div className={s.container}>
+                <div className={s.footer__wrapper}>
+                    <div className={s.footer__item}>
+                        <div className={s.footer__icons}>
+                            <a target="_blank" href="https://www.instagram.com/" className={s.footer__link}>Instagram</a>
+                            <a target="_blank" href="https://www.facebook.com/" className={s.footer__link}>Facebook</a>
+                            <a target="_blank" href="https://www.youtube.com/" className={s.footer__link}>YouTube</a>
                         </div>
                     </div>
                 </div>

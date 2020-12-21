@@ -1,7 +1,7 @@
 import React, { ReactElement, useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import './Header.css'
+import s from './Header.module.css'
 
 interface Props {
     
@@ -26,37 +26,37 @@ export default function Header({}: Props): ReactElement {
     })
     const logout = () => {
         localStorage.removeItem('users')
-        window.location.href='http://localhost:3000'
+        window.location.href='http://localhost:3001'
     }
 
     return (
-        <div className="header">
-            <div className="container">
-                <div className="header__wrapper">
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/main" onClick={e => toggle_link(e)}>Home</NavLink>
+        <div className={s.header}>
+            <div className={s.container}>
+                <div className={s.header__wrapper}>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/main" onClick={e => toggle_link(e)}>Home</NavLink>
                     </p>
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/login" onClick={e => toggle_link(e)}>Login</NavLink>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/login" onClick={e => toggle_link(e)}>Login</NavLink>
                         /
-                        <NavLink className="header__link_inner" to="/signup" onClick={e => toggle_link(e)}>Signup</NavLink>
+                        <NavLink className={s.header__link_inner} to="/signup" onClick={e => toggle_link(e)}>Signup</NavLink>
                     </p>
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/valid" onClick={e => toggle_link(e)}>Game</NavLink>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/valid" onClick={e => toggle_link(e)}>Game</NavLink>
                     </p>
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/anime" onClick={e => toggle_link(e)}>Anime</NavLink>
                     </p>
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/about" onClick={e => toggle_link(e)}>About</NavLink>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/about" onClick={e => toggle_link(e)}>About</NavLink>
                     </p>
-                    <p className="header__link">
-                        <NavLink className="header__link_inner" to="/posts" onClick={e => toggle_link(e)}>Posts</NavLink>
+                    <p className={s.header__link}>
+                        <NavLink className={s.header__link_inner} to="/posts" onClick={e => toggle_link(e)}>Posts</NavLink>
                     </p>
-                    <p className="header__link">
+                    <p className={s.header__link}>
                         {username}
                     </p>
-                    <p className="header__link">
+                    <p className={s.header__link}>
                         <button onClick={logout}>Logout</button>
                     </p>
                 </div>

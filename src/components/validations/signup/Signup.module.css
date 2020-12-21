@@ -1,22 +1,28 @@
-.login {
+.signup {
     padding: 50px 0;
 }
-.login__wrapper {
+.signup__wrapper {
     /* display: flex; */
 }
-.login__title {
+.signup__title {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+    color: lime;
 }
 .form {
     width: 20%;
     margin: 0 auto;
 }
 .form input {
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 1px solid #000;
 }
 .buttons {
     width: 100%;
@@ -36,4 +42,7 @@
 .buttons button:hover {
     color: #fff;
     background-color: #000;
+}
+.pass_alarm {
+    background-color: tomato;
 }
