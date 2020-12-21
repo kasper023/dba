@@ -13,6 +13,9 @@ import About from "../aboutus/About";
 import {postList} from "../../models/Post";
 import ErrorBoundary from "../error/ErrorBoundary";
 import Preloader from "../preloader/Preloader";
+import Products from "../Products";
+import { AppProvider } from "../context";
+import List from "../List";
 
 //lazy
 const Anime = lazy(() => import("../anime/Anime"));
@@ -24,7 +27,12 @@ function App() {
         <BrowserRouter>
             <Suspense fallback={<Preloader/>}>
                 <div className={style.app}>
+
                     <Header/>
+                    <AppProvider>
+                        <Products />
+                        <List />
+                    </AppProvider>
                     <Route path="/main">
                         <ErrorBoundary>
                             <Main/>
