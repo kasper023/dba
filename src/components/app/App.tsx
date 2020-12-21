@@ -10,19 +10,19 @@ import Main from '../main/Main';
 import Footer from '../footer/Footer';
 import {ThemeProvider} from "../theme/ThemeProvider";
 import About from "../aboutus/About";
-import Posts from "../posts/Posts";
 import {postList} from "../../models/Post";
 import ErrorBoundary from "../error/ErrorBoundary";
+import Preloader from "../preloader/Preloader";
 
-
-
+//lazy
 const Anime = lazy(() => import("../anime/Anime"));
+const Posts = lazy(()=>import("../posts/Posts"))
 
 
 function App() {
     return (
         <BrowserRouter>
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<Preloader/>}>
                 <div className={style.app}>
                     <Header/>
                     <Route path="/main">

@@ -16,9 +16,10 @@
 .student {
     text-align: center;
 }
-.student__img {
+.student__img  {
     border-radius: 50%;
-    width: 100px;
+    width: 170px;
+    height: 200px;
 }
 .student__name {
     font-size: 20px;
