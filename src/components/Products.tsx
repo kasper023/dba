@@ -14,7 +14,7 @@ const Products = () => {
                     });
                 }}
             >
-                click
+                Like
             </button>
             {state.shoppingCart}
         </div>

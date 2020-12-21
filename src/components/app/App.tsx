@@ -47,10 +47,6 @@ function App() {
                 <div className={style.app}>
 
                     <Header/>
-                    <AppProvider>
-                        <Products/>
-                        <List/>
-                    </AppProvider>
                     <Route path="/main">
                         <ErrorBoundary>
                             <Main/>
@@ -93,6 +89,10 @@ function App() {
                         <ThemeProvider>
                             <Posts postList={postList}/>
                         </ThemeProvider>
+                        <AppProvider>
+                            <Products/>
+                            <List/>
+                        </AppProvider>
                     </Route>
                     <Footer/>
                 </div>

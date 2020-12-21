@@ -93,12 +93,13 @@ const Game: React.FC = () => {
         document.title = `Game count: ${gameCount}`;
     }, [gameCount]);
     const memoizedValue =  useMemo( () => {
-        if(stepNumber % 2 == 0) return "even";
-        else return "odd";
+        if(stepNumber % 2 == 0) return localStorage['nickname1'];
+        else return localStorage['nickname2'];
     },[stepNumber])
     return (
         <div className={s.game}>
             <div className={s.game_board}>
+                Your turn: {memoizedValue}
                 <h2 className={s.gameCount}>
                     <p>Game count: {gameCount}</p>
                 </h2>
@@ -111,7 +112,6 @@ const Game: React.FC = () => {
 
                 <div>{status}</div>
                 <ol>{moves}</ol>
-                {memoizedValue}
                 <div onClick={toggleTheme} className={s.darkLight}>
                     <p>Switch to {theme === 'light' ? 'dark' : 'light'}</p>
                 </div>

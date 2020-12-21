@@ -1,5 +1,5 @@
 import React, {createRef, ReactElement, useEffect, useState} from "react";
-
+import s from './signup/Signup.module.css'
 
 interface Props {
 
@@ -38,8 +38,10 @@ export default function Validation({}: Props): ReactElement {
 
     function SubmitForm() {
         if (nickname1.length >= 8 && nickname2.length >= 8) {
-            alert("everything ok :)")
-            window.location.href = `http://localhost:3000/game/`;
+            alert("everything ok :)");
+            localStorage['nickname1'] = nickname1;
+            localStorage['nickname2'] = nickname2;
+            // window.location.href = `http://localhost:3000/game/`;
         } else {
             alert('nickname doesnt correct')
         }
@@ -50,11 +52,11 @@ export default function Validation({}: Props): ReactElement {
 
     return (
         <div className={"validation"}>
-                <div className={"container"}>
-                <h1 className="title valid__title">
+                <div className={s.container}>
+                <h1 className={s.signup__title}>
                     Validation
                 </h1>
-                <form action="/game" className="form">
+                <form action="/game" className={s.form}>
                     <input id="nick1" type="text" placeholder="Nickname for first user" onChange={(e) => {
                         setNickname1(e.target.value)
                     }} style={{
