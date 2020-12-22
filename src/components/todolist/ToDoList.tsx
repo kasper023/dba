@@ -41,31 +41,39 @@ const ToDoList = () => {
         <div className={s.wrapper}>
             <h1 className={s.title}>To Do List</h1>
             <div className={s.forms}>
-            <input value={form.name} onChange={e => {
-                    handleForm("name", e.target.value);
-                }}
-                placeholder="What should i do"/>
-
-
-            <input value={form.price} type="number" onChange={e => {
-                    handleForm("price", e.target.value);
-                }}
-                placeholder="Points I Get "/>
-
+                <input
+                    id={'form_name'}
+                    value={form.name}
+                    onChange={e => {
+                        handleForm("name", e.target.value);
+                    }}
+                    placeholder="What should i do"
+                />
+                <input
+                    id={'form_pts'}
+                    value={form.price}
+                    type="number"
+                    onChange={e => {
+                        handleForm("price", e.target.value);
+                    }}
+                    placeholder="Points I Get "
+                />
                 <button className={s.button} onClick={createProduct}>Add</button>
+            </div>
+            <div className={s.list}>
+                <div className={s.task}>
+                    <p className={s.column}>To Do</p>
+                    <p className={s.column}>Points</p>
                 </div>
-            <div >
                 {state.products.map(c => (
-                    <div>
-                        <div>
-                            To Do:
-                        {c.name}
-                        </div>
-                        <div>
-                            Points that you get:
-                        {c.price} points
-                        </div>
-                        <button className={s.button} onClick={() => deleteProduct(c.id)}>delete</button>
+                    <div className={s.task}>
+                        <p className={s.column}>
+                            {c.name}
+                        </p>
+                        <p className={s.column}>
+                            {c.price}
+                        </p>
+                        <button className={s.button} onClick={() => deleteProduct(c.id)}>Delete</button>
                     </div>
                 ))}
             </div>

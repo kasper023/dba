@@ -22,9 +22,6 @@ export default function Posts({}: Props): ReactElement {
     const {theme, toggleTheme} = useContext(ThemeContext);
 
 
-
-
-
     useEffect(() => {
         console.log('trigger use effect hook');
 
@@ -50,11 +47,9 @@ export default function Posts({}: Props): ReactElement {
 
 
     async function Add(){
-        let posts:PostModel={id:5,name:author,data:content}
-       const response= await showAnime.post("/postList",posts)
+        let post: PostModel = {id:posts.length,name:author,data:content}
+        const response= await showAnime.post("/postList",post)
         setPressed(true)
-
-
     }
 
 
